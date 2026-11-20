@@ -1,0 +1,33 @@
+EVAL_QUESTIONS = [
+    {"question": "What time period does the haulage truck dump site injury data cover?", "expected_source": "haulage_truck_safety.txt"},
+    {"question": "How many serious injuries involving haulage trucks at dump sites were identified?", "expected_source": "haulage_truck_safety.txt"},
+    {"question": "How many of the reported haulage truck dump site injuries were fatal?", "expected_source": "haulage_truck_safety.txt"},
+    {"question": "What federal agency's injury reports were used as the data source?", "expected_source": "haulage_truck_safety.txt"},
+    {"question": "How does the severity of haulage truck dump site injuries compare to other surface mine injuries?", "expected_source": "haulage_truck_safety.txt"},
+    {"question": "What type of mine site activity is the focus of this haulage truck report?", "expected_source": "haulage_truck_safety.txt"},
+    {"question": "What organization published the haulage truck dump site safety report?", "expected_source": "haulage_truck_safety.txt"},
+
+    {"question": "What time period does the mobile mine equipment maintenance safety research cover?", "expected_source": "mobile_equipment_maintenance.txt"},
+    {"question": "What are the two main research areas covered in the maintenance safety recommendations?", "expected_source": "mobile_equipment_maintenance.txt"},
+    {"question": "Who is the intended audience for the mobile equipment maintenance safety recommendations?", "expected_source": "mobile_equipment_maintenance.txt"},
+    {"question": "What organization conducted the mobile mine equipment maintenance safety research?", "expected_source": "mobile_equipment_maintenance.txt"},
+    {"question": "What year was the mobile mine equipment maintenance safety report published?", "expected_source": "mobile_equipment_maintenance.txt"},
+    {"question": "What is the title of the mobile mine equipment maintenance Information Circular?", "expected_source": "mobile_equipment_maintenance.txt"},
+    {"question": "What does the mobile equipment maintenance report say about managing maintenance information?", "expected_source": "mobile_equipment_maintenance.txt"},
+
+    {"question": "What types of explosive initiation systems are covered in the blasting manual?", "expected_source": "blasting_procedures_manual.txt"},
+    {"question": "What environmental effects of blasting are discussed in the blasting manual?", "expected_source": "blasting_procedures_manual.txt"},
+    {"question": "What year was the blasting procedures manual published?", "expected_source": "blasting_procedures_manual.txt"},
+    {"question": "Who is the intended audience for the blasting procedures manual?", "expected_source": "blasting_procedures_manual.txt"},
+    {"question": "What topics does the blasting manual cover regarding blast design?", "expected_source": "blasting_procedures_manual.txt"},
+    {"question": "What organization published the blasting procedures manual?", "expected_source": "blasting_procedures_manual.txt"},
+    {"question": "What is covered regarding blasthole loading in the blasting manual?", "expected_source": "blasting_procedures_manual.txt"},
+
+    {"question": "What underground mining vehicles are covered in the NSW injury analysis?", "expected_source": "underground_equipment_injuries.txt"},
+    {"question": "How many injuries were reported in the three-year study period in the underground mining equipment study?", "expected_source": "underground_equipment_injuries.txt"},
+    {"question": "What percentage of all reported injuries did continuous miner, shuttle car, LHD and personnel transport injuries represent?", "expected_source": "underground_equipment_injuries.txt"},
+    {"question": "What region's coal mines were studied in the underground equipment injury analysis?", "expected_source": "underground_equipment_injuries.txt"},
+    {"question": "What safety controls were proposed to reduce underground equipment injuries?", "expected_source": "underground_equipment_injuries.txt"},
+    {"question": "What time period does the underground coal mine equipment injury study cover?", "expected_source": "underground_equipment_injuries.txt"},
+    {"question": "What safety device was proposed for personnel transport proximity warnings?", "expected_source": "underground_equipment_injuries.txt"},
+]
