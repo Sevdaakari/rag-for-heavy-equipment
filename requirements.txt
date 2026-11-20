@@ -1,0 +1,4 @@
+ollama
+numpy
+tiktoken
+pypdf
