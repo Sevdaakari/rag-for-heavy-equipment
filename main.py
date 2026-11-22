@@ -6,9 +6,13 @@ from agent import is_context_sufficient, rewrite_query
 from embeddings_cache import load_cache, save_cache
 from history import load_history, save_turn
 from docs_validator import process_upload_folder
+from config import CONFIG
 import ollama
 
-CHUNKING_VERSION = "improved-v1-tokens200-overlap40"
+CHUNKING_VERSION = (
+    f"improved-v1-tokens{CONFIG['chunking']['max_tokens']}"
+    f"-overlap{CONFIG['chunking']['overlap_tokens']}"
+)
 
 
 def load_knowledge_base(folder_path):
@@ -39,7 +43,7 @@ def load_knowledge_base(folder_path):
     return all_chunks
 
 
-def ask(query, all_chunks, conversation_history, max_attempts=2):
+def ask(query, all_chunks, conversation_history, max_attempts=CONFIG["retrieval"]["max_attempts"]):
     """
     Run the agentic RAG loop: retrieve, judge, rewrite-and-retry if needed.
     """
@@ -47,7 +51,7 @@ def ask(query, all_chunks, conversation_history, max_attempts=2):
     retrieved = None
 
     for attempt in range(max_attempts):
-        retrieved = search(current_query, all_chunks, top_k=3)
+        retrieved = search(current_query, all_chunks, top_k=CONFIG["retrieval"]["top_k"])
         sufficient = is_context_sufficient(current_query, retrieved)
 
         print(f"  [attempt {attempt + 1}] query: '{current_query}' -> sufficient: {sufficient}")
@@ -64,7 +68,7 @@ def ask(query, all_chunks, conversation_history, max_attempts=2):
     augmented_prompt = build_prompt(query, retrieved)
     messages = conversation_history + [{'role': 'user', 'content': augmented_prompt}]
 
-    response = ollama.chat(model='qwen2:7b', messages=messages)
+    response = ollama.chat(model=CONFIG["models"]["chat"], messages=messages)
     answer = response['message']['content']
 
     conversation_history.append({'role': 'user', 'content': query})

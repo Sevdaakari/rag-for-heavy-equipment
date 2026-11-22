@@ -1,9 +1,10 @@
 import os
 import shutil
 from pypdf import PdfReader
+from config import CONFIG 
 
 ALLOWED_EXTENSIONS = {".txt", ".pdf"}
-MAX_FILE_SIZE_BYTES = 15 * 1024 * 1024
+MAX_FILE_SIZE_BYTES = CONFIG["upload_limits"]["max_file_mb"] * 1024 * 1024
 MAX_TOTAL_DOCS_SIZE_BYTES = 200 * 1024 * 1024  # placeholder, не измерено
 MIN_EXTRACTED_CHARS = 50
 LOG_PATH = "docs_validation.log"

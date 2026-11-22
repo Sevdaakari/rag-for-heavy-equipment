@@ -1,6 +1,7 @@
 import os
 import re
 import tiktoken
+from config import CONFIG
 
 _encoding = tiktoken.get_encoding("cl100k_base")
 
@@ -45,7 +46,8 @@ def chunk_text_naive(text):
     return [s.strip() for s in sentences if s.strip()]
 
 
-def chunk_text_improved(text, max_tokens=200, overlap_tokens=40):
+def chunk_text_improved(text, max_tokens=CONFIG["chunking"]["max_tokens"],
+                        overlap_tokens=CONFIG["chunking"]["overlap_tokens"]):
     """
     Split raw text into overlapping, fixed-token-size chunks.
 

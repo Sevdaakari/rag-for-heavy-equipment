@@ -1,0 +1,26 @@
+{
+  "models": {
+    "chat": "qwen2:7b",
+    "embedding": "nomic-embed-text"
+  },
+  "retrieval": {
+    "top_k": 3,
+    "max_attempts": 2
+  },
+  "chunking": {
+    "max_tokens": 200,
+    "overlap_tokens": 40
+  },
+  "paths": {
+    "docs": "docs",
+    "docs_upload": "docs_upload",
+    "embeddings_cache": "knowledge_base_cache.json",
+    "history_db": "history.db",
+    "validation_log": "docs_validation.log"
+  },
+  "upload_limits": {
+    "max_file_mb": 15,
+    "max_total_mb": 200,
+    "min_extracted_chars": 50
+  }
+}
